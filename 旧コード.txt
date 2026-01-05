@@ -1,0 +1,2206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIを活用した格安のWebサイト作成サービス「LiteWEB+」。初回1万円、2回目以降は19,800円。固定ページ複数可能、SEO対策、独自ドメイン対応。">
+    <meta name="keywords" content="格安Webサイト, AI制作, ホームページ作成, 低コスト, 高品質">
+    <meta name="author" content="LiteWEB+">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="LiteWEB+ | AI活用による格安のWebサイト作成サービス">
+    <meta property="og:description" content="初回1万円で高品質なWebサイトを制作。AI独自アルゴリズムによる効率的な制作で高品質なデザインを実現。">
+    <meta property="og:image" content="https://liteweb-plus.com/og-image.jpg">
+    <meta property="og:url" content="https://liteweb-plus.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>LiteWEB+ | AI活用による格安のWebサイト作成サービス</title>
+    
+    <style>
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Color Variables */
+            --primary-blue: #4FB0E6;
+            --primary-blue-light: #7CC9F9;
+            --primary-blue-dark: #2896D9;
+            --accent-blue: #05C3FF;
+            --gradient-blue-start: rgba(79, 176, 230, 0.8);
+            --gradient-blue-end: rgba(5, 195, 255, 0.9);
+            --white: #FFFFFF;
+            --off-white: #F8FCFF;
+            --light-gray: #E9F5FC;
+            --medium-gray: #B3D8F0;
+            --text-dark: #152C5B;
+            --text-medium: #3A5A80;
+            --text-light: #6B8EB2;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(79, 176, 230, 0.1);
+            --shadow-md: 0 4px 16px rgba(79, 176, 230, 0.15);
+            --shadow-lg: 0 8px 24px rgba(79, 176, 230, 0.2);
+            --shadow-xl: 0 12px 32px rgba(79, 176, 230, 0.25);
+            
+            /* Animations */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            /* Fonts */
+            --font-primary: 'Noto Sans JP', sans-serif;
+            --font-secondary: 'Poppins', sans-serif;
+            
+            /* Z-index layers */
+            --z-bg: 0;
+            --z-content: 10;
+            --z-header: 100;
+            --z-modal: 1000;
+        }
+        
+        html {
+            font-size: 62.5%; /* 10px = 1rem */
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            font-size: 1.6rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition-normal);
+        }
+        
+        ul, ol {
+            list-style: none;
+        }
+        
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+        
+        section {
+            padding: 10rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+        
+        h1 {
+            font-size: 5.4rem;
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: 4.2rem;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: 2.8rem;
+        }
+        
+        h4 {
+            font-size: 2.2rem;
+        }
+        
+        p {
+            margin-bottom: 1.6rem;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.4rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all var(--transition-normal);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--accent-blue) 100%);
+            z-index: -1;
+            transition: opacity var(--transition-normal);
+            opacity: 0;
+        }
+        
+        .btn:hover::before {
+            opacity: 1;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue-light);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .btn-large {
+            padding: 1.6rem 3.2rem;
+            font-size: 1.8rem;
+        }
+        
+        .btn svg {
+            width: 2rem;
+            height: 2rem;
+            margin-left: 1rem;
+            fill: currentColor;
+            transition: transform var(--transition-normal);
+        }
+        
+        .btn:hover svg {
+            transform: translateX(5px);
+        }
+        
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: var(--z-header);
+            padding: 2rem 0;
+            transition: all var(--transition-normal);
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .site-header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+            padding: 1.2rem 0;
+        }
+        
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .main-nav {
+            display: flex;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            gap: 3rem;
+        }
+        
+        .main-nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+            padding: 0.6rem 0;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-normal);
+        }
+        
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .header-cta {
+            margin-left: 3rem;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 3rem;
+            height: 2.4rem;
+            z-index: var(--z-content);
+        }
+        
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-dark);
+            border-radius: 3px;
+            transition: all var(--transition-normal);
+        }
+        
+        .menu-open .menu-toggle span:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+        
+        .menu-open .menu-toggle span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-open .menu-toggle span:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 80rem;
+            display: flex;
+            align-items: center;
+            padding-top: 8rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            right: -10%;
+            top: -10%;
+            width: 50%;
+            height: 70%;
+            background: radial-gradient(circle, var(--primary-blue-light) 0%, rgba(255, 255, 255, 0) 70%);
+            opacity: 0.15;
+            z-index: var(--z-bg);
+            border-radius: 50%;
+            filter: blur(50px);
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            left: -5%;
+            bottom: -10%;
+            width: 40%;
+            height: 60%;
+            background: radial-gradient(circle, var(--accent-blue) 0%, rgba(255, 255, 255, 0) 70%);
+            opacity: 0.1;
+            z-index: var(--z-bg);
+            border-radius: 50%;
+            filter: blur(50px);
+        }
+        
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            z-index: var(--z-content);
+        }
+        
+        .hero-content {
+            flex: 1;
+            max-width: 60rem;
+        }
+        
+        .hero-title {
+            margin-bottom: 2.4rem;
+            position: relative;
+        }
+        
+        .effect-text {
+            display: block;
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .main-title {
+            display: block;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .main-title strong {
+            position: relative;
+            display: inline-block;
+            color: var(--primary-blue);
+        }
+        
+        .main-title strong::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background-color: rgba(79, 176, 230, 0.2);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            color: var(--text-medium);
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        
+        .hero-cta {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        .no-credit-card {
+            font-size: 1.4rem;
+            margin-top: 1.6rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .hero-image {
+            flex: 1;
+            position: relative;
+            z-index: var(--z-content);
+            opacity: 0;
+            transform: translateX(40px);
+        }
+        
+        .hero-image-placeholder {
+            border-radius: 12px;
+            background: linear-gradient(45deg, var(--light-gray), var(--medium-gray));
+            width: 100%;
+            height: 40rem;
+            box-shadow: var(--shadow-xl);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: all var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image-placeholder::after {
+            content: "LiteWEB+";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% {
+                top: -50%;
+                left: -50%;
+            }
+            100% {
+                top: 50%;
+                left: 50%;
+            }
+        }
+        
+        .hero-image-placeholder:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0;
+        }
+        
+        .scroll-indicator span {
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+        
+        .mouse {
+            width: 2.6rem;
+            height: 4.2rem;
+            border: 2px solid var(--primary-blue);
+            border-radius: 1.3rem;
+            position: relative;
+        }
+        
+        .wheel {
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            position: absolute;
+            top: 0.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 2s ease-in-out infinite;
+        }
+        
+        @keyframes scrollWheel {
+            0% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(1.6rem);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        /* Clients Section */
+        .clients {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+        
+        .clients .section-title {
+            font-size: 2.4rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--text-medium);
+        }
+        
+        .client-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+        
+        .client-logo {
+            flex: 1;
+            min-width: 16rem;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all var(--transition-normal);
+            filter: grayscale(100%) opacity(0.7);
+            transform: scale(0.9);
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            height: 8rem;
+            position: relative;
+        }
+        
+        .client-logo::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 2px;
+            background-color: var(--medium-gray);
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1);
+            background-color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            position: relative;
+            margin-bottom: 6rem;
+            padding-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8rem;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            border-radius: 2px;
+        }
+        
+        .section-title span {
+            display: block;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: var(--off-white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            left: -5%;
+            top: -5%;
+            width: 30%;
+            height: 50%;
+            background: radial-gradient(circle, var(--primary-blue-light) 0%, rgba(255, 255, 255, 0) 70%);
+            opacity: 0.1;
+            border-radius: 50%;
+            filter: blur(50px);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+            gap: 4rem;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 4rem 3rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-card:hover .feature-title,
+        .feature-card:hover .feature-desc {
+            color: var(--white);
+        }
+        
+        .feature-card:hover .feature-icon {
+            background-color: var(--white);
+        }
+        
+        .feature-icon {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2.4rem;
+            transition: all var(--transition-normal);
+            font-size: 4rem;
+            color: var(--primary-blue);
+        }
+        
+        .feature-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.6rem;
+            transition: color var(--transition-normal);
+        }
+        
+        .feature-desc {
+            color: var(--text-medium);
+            transition: color var(--transition-normal);
+        }
+        
+        /* Price Section */
+        .price {
+            background-color: var(--white);
+            position: relative;
+        }
+        
+        .price::after {
+            content: '';
+            position: absolute;
+            right: -5%;
+            bottom: -10%;
+            width: 40%;
+            height: 60%;
+            background: radial-gradient(circle, var(--accent-blue) 0%, rgba(255, 255, 255, 0) 70%);
+            opacity: 0.1;
+            z-index: var(--z-bg);
+            border-radius: 50%;
+            filter: blur(50px);
+        }
+        
+        .price-cards {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+        
+        .price-card {
+            flex: 1;
+            max-width: 38rem;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+        }
+        
+        .price-card-header {
+            padding: 4rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .price-card-title {
+            font-size: 2.6rem;
+            margin-bottom: 1.6rem;
+        }
+        
+        .price-card-price {
+            margin-bottom: 1.6rem;
+        }
+        
+        .price-amount {
+            font-size: 4.2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .price-period {
+            font-size: 1.6rem;
+            color: var(--text-light);
+        }
+        
+        .price-card-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-light);
+        }
+        
+        .price-card-body {
+            padding: 3rem;
+        }
+        
+        .price-features {
+            margin-bottom: 3rem;
+        }
+        
+        .price-features li {
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            color: var(--text-medium);
+        }
+        
+        .price-features li::before {
+            content: '✓';
+            display: inline-block;
+            margin-right: 1rem;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .price-card-footer {
+            padding: 0 3rem 3rem;
+            text-align: center;
+        }
+        
+        .price-comparison {
+            background-color: var(--off-white);
+            border-radius: 12px;
+            padding: 4rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .comparison-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.4rem;
+        }
+        
+        .comparison-table-wrapper {
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.6rem;
+            text-align: center;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .comparison-table th {
+            font-weight: 600;
+            color: var(--text-dark);
+            background-color: var(--light-gray);
+        }
+        
+        .comparison-table th:first-child {
+            text-align: left;
+            border-top-left-radius: 8px;
+        }
+        
+        .comparison-table th:last-child {
+            border-top-right-radius: 8px;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .comparison-table .highlight {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        
+        /* Flow Section */
+        .flow {
+            background-color: var(--off-white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .flow::before {
+            content: '';
+            position: absolute;
+            left: -5%;
+            top: 20%;
+            width: 30%;
+            height: 40%;
+            background: radial-gradient(circle, var(--primary-blue-light) 0%, rgba(255, 255, 255, 0) 70%);
+            opacity: 0.1;
+            border-radius: 50%;
+            filter: blur(50px);
+        }
+        
+        .flow-steps {
+            position: relative;
+        }
+        
+        .flow-steps::before {
+            content: '';
+            position: absolute;
+            top: 6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            z-index: 0;
+        }
+        
+        .flow-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+            padding: 0 4rem;
+        }
+        
+        .step-title {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-desc {
+            color: var(--text-medium);
+        }
+        
+        .step-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .step-image-placeholder {
+            width: 24rem;
+            height: 18rem;
+            background: linear-gradient(45deg, var(--light-gray), var(--medium-gray));
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-image-placeholder::after {
+            content: "Step " attr(data-step);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .step-image-placeholder:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .flow-cta {
+            text-align: center;
+            margin-top: 6rem;
+        }
+        
+        .no-obligation {
+            font-size: 1.4rem;
+            margin-top: 1.6rem;
+            color: var(--text-light);
+        }
+        
+        /* Cases Section */
+        .cases {
+            background-color: var(--white);
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+            gap: 4rem;
+        }
+        
+        .case-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .case-image {
+            position: relative;
+            overflow: hidden;
+            height: 24rem;
+            background: linear-gradient(45deg, var(--light-gray), var(--medium-gray));
+        }
+        
+        .case-image::after {
+            content: "Case Study";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .case-card:hover .case-image::after {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+        
+        .case-content {
+            padding: 3rem;
+        }
+        
+        .case-logo {
+            margin-bottom: 2rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .case-title {
+            font-size: 2.2rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .case-meta {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .case-quote {
+            padding: 2rem;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .case-quote::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: var(--primary-blue);
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .case-quote p {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0;
+        }
+        
+        /* Target Section */
+        .target {
+            background-color: var(--off-white);
+        }
+        
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+            gap: 4rem;
+        }
+        
+        .target-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 4rem 3rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            text-align: center;
+        }
+        
+        .target-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .target-icon {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2.4rem;
+            font-size: 4rem;
+            color: var(--primary-blue);
+        }
+        
+        .target-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.6rem;
+        }
+        
+        .target-desc {
+            color: var(--text-medium);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background-color: var(--white);
+        }
+        
+        .faq-list {
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-question {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .faq-question h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            padding-right: 3rem;
+        }
+        
+        .faq-icon {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            right: 2rem;
+            transition: transform var(--transition-normal);
+        }
+        
+        .faq-icon::before,
+        .faq-icon::after {
+            content: '';
+            position: absolute;
+            background-color: var(--primary-blue);
+            transition: all var(--transition-normal);
+        }
+        
+        .faq-icon::before {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .faq-icon::after {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .faq-item.active .faq-icon::after {
+            transform: translateX(-50%) scaleY(0);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-normal);
+            padding: 0 2rem;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 50rem;
+            padding-bottom: 2rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-title {
+            color: var(--white);
+            font-size: 4.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 2rem;
+            margin-bottom: 4rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 8rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .footer-logo {
+            margin-bottom: 2rem;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+        }
+        
+        .footer-nav h4 {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .footer-nav h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 4rem;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+        
+        .footer-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color var(--transition-normal);
+        }
+        
+        .footer-nav a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .copyright {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Animation Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all var(--transition-slow);
+        }
+        
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            html {
+                font-size: 58%;
+            }
+            
+            .hero-content {
+                max-width: 50rem;
+            }
+            
+            .hero .container {
+                flex-direction: column;
+            }
+            
+            .hero-image {
+                width: 100%;
+                max-width: 60rem;
+                margin-top: 4rem;
+            }
+            
+            .price-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .price-card {
+                width: 100%;
+                max-width: 50rem;
+            }
+            
+            .flow-step {
+                flex-direction: column;
+                text-align: center;
+                gap: 3rem;
+            }
+            
+            .flow-steps::before {
+                display: none;
+            }
+            
+            .step-content {
+                padding: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            html {
+                font-size: 55%;
+            }
+            
+            section {
+                padding: 8rem 0;
+            }
+            
+            .main-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right var(--transition-normal);
+                box-shadow: var(--shadow-xl);
+                z-index: var(--z-modal);
+                padding: 6rem 2rem;
+            }
+            
+            .menu-open .main-nav {
+                right: 0;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 2.4rem;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .header-cta {
+                display: none;
+            }
+            
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            html {
+                font-size: 50%;
+            }
+            
+            h1 {
+                font-size: 4.4rem;
+            }
+            
+            h2 {
+                font-size: 3.6rem;
+            }
+            
+            .client-logos {
+                justify-content: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .target-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        .step-image-img {
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    max-width: 100%;
+    height: auto;
+}
+
+.step-image-img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.case-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.case-card:hover .case-image-img {
+    transform: scale(1.05);
+}
+
+/* 元のテキストオーバーレイを削除 */
+.case-image::after {
+    display: none;
+}
+
+
+.hero-video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-xl);
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+    transition: all var(--transition-slow);
+    object-fit: cover;
+}
+
+.hero-video:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+/* 元のプレースホルダー関連のスタイルは必要に応じて削除 */
+
+ .logo-marquee-container {
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--off-white);
+        padding: 4rem 0;
+        position: relative;
+        margin: 0 auto;
+    }
+    
+    .logo-marquee {
+        display: flex;
+        animation: scrolling 30s linear infinite;
+        width: max-content; /* コンテンツの幅に自動調整 */
+    }
+    
+    /* 二回繰り返すことで無限ループの見た目を作る */
+    .logo-marquee-content {
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+    }
+    
+    .client-logo-item {
+        flex: 0 0 auto;
+        min-width: 20rem;
+        height: 8rem;
+        padding: 1rem 3rem;
+        margin: 0 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--white);
+        border-radius: 8px;
+        box-shadow: var(--shadow-sm);
+        transition: all var(--transition-normal);
+        font-weight: 500;
+        color: var(--text-medium);
+    }
+    
+    .client-logo-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+        color: var(--primary-blue);
+    }
+    
+    @keyframes scrolling {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%); /* コンテンツの半分の長さ分だけスクロール */
+        }
+    }
+    
+    /* オプション: スマホ対応 */
+    @media (max-width: 768px) {
+        .client-logo-item {
+            min-width: 15rem;
+            margin: 0 1rem;
+            padding: 1rem 2rem;
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                LiteWEB+
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#features" class="nav-link">特徴</a></li>
+                    <li><a href="#price" class="nav-link">料金</a></li>
+                    <li><a href="#flow" class="nav-link">制作フロー</a></li>
+                    <li><a href="#cases" class="nav-link">導入事例</a></li>
+                    <li><a href="#faq" class="nav-link">よくある質問</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="header-cta">
+                <a href="https://s.lmes.jp/landing-qr/2006748792-BXVNxLLm?uLand=TWDJ01" class="btn btn-primary">無料相談はこちら</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="effect-text">AIが実現する</span>
+                    <span class="main-title">高品質Webサイトが<br><strong>初回1万円</strong>から</span>
+                </h1>
+                <p class="hero-subtitle">通常30万円相当のプロフェッショナルWebサイトを<br>AI独自アルゴリズムで圧倒的な低価格で実現</p>
+                <div class="hero-cta">
+                    <a href="https://s.lmes.jp/landing-qr/2006748792-BXVNxLLm?uLand=TWDJ01" class="btn btn-primary btn-large">
+                        <span>LINE登録で無料相談</span>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                        </svg>
+                    </a>
+                    <p class="no-credit-card">クレジットカード登録不要・初期費用無料</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <video class="hero-video" autoplay muted loop playsinline>
+                 <source src="/image/hptop.mp4" type="video/mp4">
+                     お使いのブラウザは動画タグをサポートしていません。
+                 </video>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Clients Section -->
+    <section class="clients">
+    <div class="container">
+        <h2 class="section-title reveal-on-scroll">多くの企業様にご利用いただいています</h2>
+        
+        <div class="logo-marquee-container">
+            <div class="logo-marquee">
+                <!-- 最初のセット -->
+                <div class="logo-marquee-content">
+                    <div class="client-logo-item">合同会社スカイフォーカス</div>
+                    <div class="client-logo-item">株式会社ネオビジョンテックス</div>
+                    <div class="client-logo-item">合同会社ストラクチャー&インフィニティ</div>
+                    <div class="client-logo-item">株式会社グローバルヴォーグ</div>
+                    <div class="client-logo-item">株式会社アルファ</div>
+                    <div class="client-logo-item">株式会社コネクトコミュニケーション</div>
+                </div>
+                
+                <!-- 二回目のセット（ループ効果用に同じ内容を繰り返す） -->
+                <div class="logo-marquee-content">
+                    <div class="client-logo-item">合同会社スカイフォーカス</div>
+                    <div class="client-logo-item">株式会社ネオビジョンテックス</div>
+                    <div class="client-logo-item">合同会社ストラクチャー&インフィニティ</div>
+                    <div class="client-logo-item">株式会社グローバルヴォーグ</div>
+                    <div class="client-logo-item">株式会社アルファ</div>
+                    <div class="client-logo-item">株式会社コネクトコミュニケーション</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll">
+                <span>なぜこの価格で<br>高品質なWebサイトが可能なのか</span>
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card reveal-on-scroll" data-delay="100">
+                    <div class="feature-icon">
+                        <i>AI</i>
+                    </div>
+                    <h3 class="feature-title">AI独自アルゴリズム</h3>
+                    <p class="feature-desc">高度なAIアルゴリズムを活用することで、従来の制作プロセスを効率化。人間のデザイナーの審美眼とAIの効率性を組み合わせることで、高品質なサイトを低コストで実現しています。</p>
+                </div>
+                <div class="feature-card reveal-on-scroll" data-delay="200">
+                    <div class="feature-icon">
+                        <i>¥</i>
+                    </div>
+                    <h3 class="feature-title">圧倒的な破格の価格設定</h3>
+                    <p class="feature-desc">初回<strong>1万円</strong>、2回目以降は<strong>19,800円</strong>という業界最安値の価格設定。初期費用は無料で、月額・年額費用も不要なので安心してご利用いただけます。</p>
+                </div>
+                <div class="feature-card reveal-on-scroll" data-delay="300">
+                    <div class="feature-icon">
+                        <i>✨</i>
+                    </div>
+                    <h3 class="feature-title">高品質なデザイン性</h3>
+                    <p class="feature-desc">低価格ながらも、プロフェッショナルデザイナー監修による洗練されたデザインを提供。ビジネスの信頼性を高めるクオリティを実現しています。</p>
+                </div>
+                <div class="feature-card reveal-on-scroll" data-delay="400">
+                    <div class="feature-icon">
+                        <i>SEO</i>
+                    </div>
+                    <h3 class="feature-title">SEO対策で集客力アップ</h3>
+                    <p class="feature-desc">検索エンジン最適化を標準装備。Googleの評価基準に沿った設計で、検索結果での上位表示を目指します。ビジネスの見つけやすさを向上させます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Price Section -->
+    <section id="price" class="price">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll">料金プラン</h2>
+            <div class="price-cards">
+                <div class="price-card reveal-on-scroll" data-delay="100">
+                    <div class="price-card-header">
+                        <h3 class="price-card-title">初回制作</h3>
+                        <div class="price-card-price">
+                            <span class="price-amount">¥10,000</span>
+                            <span class="price-period">（税別）</span>
+                        </div>
+                        <p class="price-card-subtitle">通常30万円相当のサイトが破格の価格で</p>
+                    </div>
+                    <div class="price-card-body">
+                        <ul class="price-features">
+                            <li>複数固定ページ対応</li>
+                            <li>SEO対策込み</li>
+                            <li>レスポンシブデザイン（スマホ対応）</li>
+                            <li>独自ドメイン対応（別途ドメイン代）</li>
+                            <li>初期費用無料</li>
+                            <li>月額・年額費用不要</li>
+                        </ul>
+                    </div>
+                    <div class="price-card-footer">
+                        <a href="https://s.lmes.jp/landing-qr/2006748792-BXVNxLLm?uLand=TWDJ01" class="btn btn-primary">無料相談する</a>
+                    </div>
+                </div>
+                <div class="price-card reveal-on-scroll" data-delay="200">
+                    <div class="price-card-header">
+                        <h3 class="price-card-title">2回目以降</h3>
+                        <div class="price-card-price">
+                            <span class="price-amount">¥19,800</span>
+                            <span class="price-period">（税別）</span>
+                        </div>
+                        <p class="price-card-subtitle">2サイト目以降もリーズナブルな価格で</p>
+                    </div>
+                    <div class="price-card-body">
+                        <ul class="price-features">
+                            <li>複数固定ページ対応</li>
+                            <li>SEO対策込み</li>
+                            <li>レスポンシブデザイン（スマホ対応）</li>
+                            <li>独自ドメイン対応（別途ドメイン代）</li>
+                            <li>初期費用無料</li>
+                            <li>月額・年額費用不要</li>
+                        </ul>
+                    </div>
+                    <div class="price-card-footer">
+                        <a href="https://s.lmes.jp/landing-qr/2006748792-BXVNxLLm?uLand=TWDJ01" class="btn btn-primary">無料相談する</a>
+                    </div>
+                </div>
+            </div>
+            <div class="price-comparison reveal-on-scroll">
+                <h3 class="comparison-title">他社比較</h3>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>LiteWEB+</th>
+                                <th>一般的な制作会社</th>
+                                <th>フリーランス</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>初期費用</td>
+                                <td class="highlight">無料</td>
+                                <td>5〜10万円</td>
+                                <td>3〜5万円</td>
+                            </tr>
+                            <tr>
+                                <td>制作費用</td>
+                                <td class="highlight">1万円〜</td>
+                                <td>30〜50万円</td>
+                                <td>15〜30万円</td>
+                            </tr>
+                            <tr>
+                                <td>月額費用</td>
+                                <td class="highlight">無料</td>
+                                <td>5,000円〜</td>
+                                <td>3,000円〜</td>
+                            </tr>
+                            <tr>
+                                <td>年間コスト</td>
+                                <td class="highlight">ドメイン代のみ</td>
+                                <td>6〜10万円</td>
+                                <td>3〜6万円</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Flow Section -->
+    <section id="flow" class="flow">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll">簡単3ステップでサイト完成</h2>
+            <div class="flow-steps">
+                <div class="flow-step reveal-on-scroll" data-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">公式LINEに登録</h3>
+                        <p class="step-desc">公式LINEアカウントにご登録いただき、自動送信されるヒアリングフォームにご回答ください。</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="/image/seisaku1.jpg" alt="LINE登録イメージ" class="step-image-img" width="240" height="180">
+                    </div>
+                </div>
+                <div class="flow-step reveal-on-scroll" data-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">AIによる制作</h3>
+                        <p class="step-desc">お客様のご要望をもとに、AIアルゴリズムとデザイナーの監修によってサイトを制作します。</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="/image/seisaku2.jpg" alt="AI制作" class="step-image-img" width="240" height="180">
+                    </div>
+                </div>
+                <div class="flow-step reveal-on-scroll" data-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">サイト納品・公開</h3>
+                        <p class="step-desc">最短3日でサイトが完成。ご確認いただいた後、すぐに公開することが可能です。</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="/image/seisaku3.jpg" alt="サイト公開納品" class="step-image-img" width="240" height="180">
+                    </div>
+                </div>
+            </div>
+            <div class="flow-cta reveal-on-scroll">
+                <a href="https://s.lmes.jp/landing-qr/2006748792-BXVNxLLm?uLand=TWDJ01" class="btn btn-primary btn-large">今すぐLINEで無料相談</a>
+                <p class="no-obligation">お見積りだけでもOK・無料相談は何度でも可能</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cases Section -->
+    <section id="cases" class="cases">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll">導入事例</h2>
+            <div class="cases-grid">
+                <div class="case-card reveal-on-scroll" data-delay="100">
+                    <div class="case-card reveal-on-scroll" data-delay="100">
+    <div class="case-image">
+        <a href="https://skyfocus1.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <img src="/image/sky.jpg" alt="スカイフォーカスの事例" class="case-image-img">
+        </a>
+    </div>
+        <div class="case-content">
+            <div class="case-logo">
+                会社ホームページの制作
+            </div>
+        <h3 class="case-title">合同会社スカイフォーカス</h3>
+            <p class="case-meta">代表：池田一輝様</p>
+            <div class="case-quote">
+            <p>「この価格でこのクオリティは驚きでした。わずか1週間で素晴らしいWebサイトが完成し、集客にも効果が出ています。」</p>
+            </div>
+        </div>
+    </div>
+
+
+
+                <div class="case-card reveal-on-scroll" data-delay="200">
+    <div class="case-image">
+        <a href="https://grantznavi0514.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <img src="/image/neovison1.jpg" alt="ネオビジョンテックスの事例" class="case-image-img">
+        </a>
+    </div>
+    <div class="case-content">
+        <div class="case-logo">
+            助成金資料ページの制作
+        </div>
+        <h3 class="case-title">株式会社ネオビジョンテックス</h3>
+        <p class="case-meta">代表取締役：高橋 悠人様</p>
+        <div class="case-quote">
+            <p>「短期間でプロフェッショナルなページが完成し、ビジネスの信頼性が向上しました。コストパフォーマンスは業界最高レベルです。」</p>
+        </div>
+    </div>
+    </div>
+
+
+
+                <div class="case-card reveal-on-scroll" data-delay="300">
+    <div class="case-image">
+        <a href="https://graceful-begonia-e292c6.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <img src="/image/shoken.jpg" alt="ストラクチャー＆インフィニティの事例" class="case-image-img">
+        </a>
+    </div>
+    <div class="case-content">
+        <div class="case-logo">
+            ストラクチャー＆インフィニティ
+        </div>
+        <h3 class="case-title">合同会社ストラクチャー＆インフィニティ</h3>
+        <p class="case-meta">代表取締役：窪田 真也様</p>
+        <div class="case-quote">
+            <p>「LINEで簡単に依頼できる手軽さと、納品されたサイトのクオリティのギャップに驚きました。この価格は革命的です。」</p>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Target Section -->
+    <section class="target">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll">こんな方におすすめです</h2>
+            <div class="target-grid">
+                <div class="target-card reveal-on-scroll" data-delay="100">
+                    <div class="target-icon">
+                        <i>🏢</i>
+                    </div>
+                    <h3 class="target-title">小規模事業主の方</h3>
+                    <p class="target-desc">限られた予算の中で高品質なWebサイトを持ちたい方に最適です。コストを抑えながらもプロフェッショナルな印象を与えるサイトを構築できます。</p>
+                </div>
+                <div class="target-card reveal-on-scroll" data-delay="200">
+                    <div class="target-icon">
+                        <i>🚀</i>
+                    </div>
+                    <h3 class="target-title">スタートアップ・ベンチャー企業</h3>
+                    <p class="target-desc">起業したばかりで資金に限りがある中、ビジネスの顔となる高品質なWebサイトを手頃な価格で実現します。成長に合わせた拡張も可能です。</p>
+                </div>
+                <div class="target-card reveal-on-scroll" data-delay="300">
+                    <div class="target-icon">
+                        <i>👨‍💼</i>
+                    </div>
+                    <h3 class="target-title">個人事業主の方</h3>
+                    <p class="target-desc">フリーランスや個人事業主の方の強力なビジネスツールに。プロフェッショナルなWebサイトで信頼を獲得し、新規クライアント獲得をサポートします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll">よくある質問</h2>
+            <div class="faq-list">
+                <div class="faq-item reveal-on-scroll" data-delay="100">
+                    <div class="faq-question">
+                        <h3>どうして1万円という破格の価格が実現できるのですか？</h3>
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>AI独自アルゴリズムによる効率的な制作プロセスを採用することで、従来の人手による制作時間を大幅に短縮し、コストを抑えることに成功しました。また、テンプレートではなく、お客様ごとにカスタマイズされたデザインを提供しています。</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-on-scroll" data-delay="150">
+                    <div class="faq-question">
+                        <h3>納期はどれくらいですか？</h3>
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>標準的な納期は1〜5営業日です。ただし、サイトの複雑さや要件によって変動する場合があります。急ぎの場合は、お申し込み時にご相談ください。</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-on-scroll" data-delay="200">
+                    <div class="faq-question">
+                        <h3>サイト制作後の修正や更新は可能ですか？</h3>
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、可能です。納品後の細かな修正は3回まで無料で対応しています。大規模な更新や追加機能については、別途お見積りとなりますが、リーズナブルな価格でご提供しています。</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-on-scroll" data-delay="250">
+                    <div class="faq-question">
+                        <h3>独自ドメインの取得も代行してもらえますか？</h3>
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、独自ドメインの取得代行も承っております。ドメイン取得費用（年間1,000円〜）は別途となりますが、設定作業は無料で行います。既にお持ちのドメインがある場合は、そちらを使用することも可能です。</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-on-scroll" data-delay="300">
+                    <div class="faq-question">
+                        <h3>SEO対策は含まれていますか？</h3>
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、基本的なSEO対策は全てのプランに含まれています。適切なメタタグの設定、高速な読み込み速度の最適化、検索エンジンフレンドリーな構造など、Googleの評価基準に沿った設計を行います。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content reveal-on-scroll">
+                <h2 class="cta-title">あなたのビジネスにプロフェッショナルなWebサイトを</h2>
+                <p class="cta-subtitle">初回1万円から、圧倒的な低価格で高品質なWebサイトを実現します</p>
+                <div class="cta-buttons">
+                    <a href="https://s.lmes.jp/landing-qr/2006748792-BXVNxLLm?uLand=TWDJ01" class="btn btn-primary btn-large">
+                        <span>LINE登録で無料相談</span>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                        </svg>
+                    </a>
+                    <p class="no-obligation">お見積もりだけでもOK・お気軽にご相談ください</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        
+    </footer>
+    
+    <!-- Simplified JavaScript that will work reliably -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const body = document.body;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    body.classList.toggle('menu-open');
+                });
+            }
+            
+            // Close menu when clicking nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    body.classList.remove('menu-open');
+                });
+            });
+            
+            // Hero section animations with simple approach
+            setTimeout(() => {
+                const effectText = document.querySelector('.effect-text');
+                if (effectText) effectText.style.opacity = 1;
+                if (effectText) effectText.style.transform = 'translateY(0)';
+            }, 300);
+            
+            setTimeout(() => {
+                const mainTitle = document.querySelector('.main-title');
+                if (mainTitle) mainTitle.style.opacity = 1;
+                if (mainTitle) mainTitle.style.transform = 'translateY(0)';
+                
+                const mainTitleStrong = document.querySelector('.main-title strong::after');
+                if (mainTitleStrong) mainTitleStrong.style.transform = 'scaleX(1)';
+            }, 600);
+            
+            setTimeout(() => {
+                const heroSubtitle = document.querySelector('.hero-subtitle');
+                if (heroSubtitle) heroSubtitle.style.opacity = 1;
+                if (heroSubtitle) heroSubtitle.style.transform = 'translateY(0)';
+            }, 900);
+            
+            setTimeout(() => {
+                const heroCta = document.querySelector('.hero-cta');
+                if (heroCta) heroCta.style.opacity = 1;
+                if (heroCta) heroCta.style.transform = 'translateY(0)';
+            }, 1200);
+            
+            setTimeout(() => {
+                const heroImage = document.querySelector('.hero-image');
+                if (heroImage) heroImage.style.opacity = 1;
+                if (heroImage) heroImage.style.transform = 'translateX(0)';
+            }, 1500);
+            
+            setTimeout(() => {
+                const scrollIndicator = document.querySelector('.scroll-indicator');
+                if (scrollIndicator) scrollIndicator.style.opacity = 1;
+            }, 2000);
+            
+            // Simple scroll reveal without dependencies
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            
+            function checkScroll() {
+                const windowHeight = window.innerHeight;
+                
+                revealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Check initial state
+            
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                if (question) {
+                    question.addEventListener('click', () => {
+                        const isActive = item.classList.contains('active');
+                        
+                        // Close all items
+                        faqItems.forEach(faq => {
+                            faq.classList.remove('active');
+                        });
+                        
+                        // Open clicked item if it wasn't active
+                        if (!isActive) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('.site-header');
+            
+            function headerScrollEffect() {
+                if (window.scrollY > 50) {
+                    if (header) header.classList.add('scrolled');
+                } else {
+                    if (header) header.classList.remove('scrolled');
+                }
+            }
+            
+            window.addEventListener('scroll', headerScrollEffect);
+            headerScrollEffect(); // Initial check
+            
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (!targetElement) return;
+                    
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Highlight active nav item based on scroll position
+            function setActiveNavItem() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
+                    } else {
+                        document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.remove('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', setActiveNavItem);
+            setActiveNavItem(); // Initial check
+        });
+    </script>
+</body>
+</html>

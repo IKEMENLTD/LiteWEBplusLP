@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | LiteWEB+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="bg-noise">
+        <div class="bg-blob"></div>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay">
+        <div class="menu-list">
+            <a href="index.html" class="menu-link">Home</a>
+            <a href="index.html#features" class="menu-link">Features</a>
+            <a href="index.html#pricing" class="menu-link">Pricing</a>
+            <a href="index.html#showcase" class="menu-link">Works</a>
+            <a href="company.html" class="menu-link">Company</a>
+            <button class="nav-menu-btn"
+                style="margin-top: 4rem; background: var(--c-surface); color: var(--c-ink);">Close</button>
+        </div>
+    </div>
+
+    <nav class="nav-fixed">
+        <a href="index.html" class="nav-logo">
+            <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="35" font-family="Outfit" font-weight="800" font-size="32"
+                    letter-spacing="-1">LITEWEB+</text>
+                <circle cx="180" cy="25" r="5" fill="#2563EB" />
+            </svg>
+        </a>
+        <button class="nav-menu-btn">Menu</button>
+        <div class="nav-contact">
+            <a href="https://s.lmes.jp/landing-qr/2006748792-BXVNxLLm?uLand=TWDJ01" class="circle-btn">Contact</a>
+        </div>
+    </nav>
+
+    <div class="wrapper" style="padding-top: 20vh; padding-bottom: 20vh;">
+        <h1 class="display-text text-xl mb-huge">
+            PRIVACY<br><span class="text-outline">POLICY</span>
+        </h1>
+
+        <div class="grid-cols">
+            <div class="col-span-3">
+                <div class="hero-tag">個人情報保護方針</div>
+            </div>
+            <div class="col-span-9">
+                <p style="font-size: 1.6rem; line-height: 2; margin-bottom: 10vh;">
+                    株式会社イケメン（以下「当社」）は、お客様の個人情報保護の重要性を認識し、適切な取り扱いと保護に努めます。
+                </p>
+
+                <div style="margin-bottom: 10vh;">
+                    <h2 class="display-text text-lg mb-huge">01 / COLLECTION</h2>
+                    <ul style="list-style: disc; padding-left: 2rem; font-size: 1.6rem; line-height: 2;">
+                        <li>氏名、会社名</li>
+                        <li>メールアドレス、電話番号</li>
+                        <li>お問い合わせ内容、サービス利用履歴</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 10vh;">
+                    <h2 class="display-text text-lg mb-huge">02 / PURPOSE</h2>
+                    <ul style="list-style: disc; padding-left: 2rem; font-size: 1.6rem; line-height: 2;">
+                        <li>サービスの提供および運営</li>
+                        <li>お問い合わせへの対応</li>
+                        <li>サービス改善のための分析</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 10vh;">
+                    <h2 class="display-text text-lg mb-huge">03 / PROVISION</h2>
+                    <p style="font-size: 1.6rem; line-height: 2;">
+                        法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。
+                    </p>
+                </div>
+
+                <div style="border-top: 1px solid var(--c-ink); padding-top: 4rem;">
+                    <h2 class="display-text text-lg mb-huge">CONTACT</h2>
+                    <p style="font-size: 1.6rem; line-height: 2;">
+                        株式会社イケメン 個人情報お問い合わせ窓口<br>
+                        privacy@ikemen-inc.co.jp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <div>&copy; 2025 LITEWEB+</div>
+            <a href="index.html">HOME</a>
+            <a href="company.html">COMPANY</a>
+            <a href="legal.html">LEGAL</a>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Character Reveal Logic
+        function wrapChars(element) {
+            if (element.classList.contains('char-reveal')) return;
+
+            const walk = (node) => {
+                if (node.nodeType === 3) { // Text node
+                    const text = node.nodeValue;
+                    if (text.trim().length === 0) return;
+
+                    const span = document.createElement('span');
+                    span.innerHTML = text.split('').map(char => {
+                        return `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`;
+                    }).join('');
+
+                    node.parentNode.replaceChild(span, node);
+                } else if (node.nodeType === 1 && !['SCRIPT', 'STYLE', 'VIDEO', 'SVG'].includes(node.tagName)) {
+                    Array.from(node.childNodes).forEach(walk);
+                }
+            };
+
+            walk(element);
+            element.classList.add('char-reveal');
+
+            // Assign delays
+            const chars = element.querySelectorAll('.char');
+            chars.forEach((char, i) => {
+                char.style.transitionDelay = `${i * 0.015}s`;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const targets = document.querySelectorAll('p, h2, h3, h4, li, th, td, .hero-tag, .price-val, .feature-num');
+
+            targets.forEach(el => {
+                wrapChars(el);
+                observer.observe(el);
+            });
+
+            // Mobile Menu Toggle
+            const menuBtn = document.querySelectorAll('.nav-menu-btn');
+            const menuOverlay = document.querySelector('.menu-overlay');
+            const menuLinks = document.querySelectorAll('.menu-link');
+
+            menuBtn.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    menuOverlay.classList.toggle('active');
+                });
+            });
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuOverlay.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

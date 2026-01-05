@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company | LiteWEB+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="bg-noise">
+        <div class="bg-blob"></div>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay">
+        <div class="menu-list">
+            <a href="index.html" class="menu-link">Home</a>
+            <a href="index.html#features" class="menu-link">Features</a>
+            <a href="index.html#pricing" class="menu-link">Pricing</a>
+            <a href="index.html#showcase" class="menu-link">Works</a>
+            <a href="company.html" class="menu-link">Company</a>
+            <button class="nav-menu-btn"
+                style="margin-top: 4rem; background: var(--c-surface); color: var(--c-ink);">Close</button>
+        </div>
+    </div>
+
+    <nav class="nav-fixed">
+        <a href="index.html" class="nav-logo">
+            <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="35" font-family="Outfit" font-weight="800" font-size="32"
+                    letter-spacing="-1">LITEWEB+</text>
+                <circle cx="180" cy="25" r="5" fill="#2563EB" />
+            </svg>
+        </a>
+        <button class="nav-menu-btn">Menu</button>
+        <div class="nav-contact">
+            <a href="https://s.lmes.jp/landing-qr/2006748792-BXVNxLLm?uLand=TWDJ01" class="circle-btn">Contact</a>
+        </div>
+    </nav>
+
+    <div class="wrapper" style="padding-top: 20vh; padding-bottom: 20vh;">
+        <h1 class="display-text text-xl mb-huge">
+            COMPANY<br><span class="text-outline">PROFILE</span>
+        </h1>
+
+        <div class="grid-cols">
+            <div class="col-span-3">
+                <div class="hero-tag">OVERVIEW</div>
+            </div>
+            <div class="col-span-9" style="position: relative; z-index: 10;">
+                <div class="feature-row"
+                    style="margin-bottom: 0; padding-top: 0; border-top: none; opacity: 1; transform: none;">
+                    <div class="feature-content" style="width: 100%;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 1.6rem;">
+                            <tr style="border-bottom: 1px solid var(--c-ink);">
+                                <th style="text-align: left; padding: 2rem 0; width: 30%;">会社名</th>
+                                <td style="padding: 2rem 0;">株式会社イケメン</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--c-ink);">
+                                <th style="text-align: left; padding: 2rem 0;">設立</th>
+                                <td style="padding: 2rem 0;">2022年4月19日</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--c-ink);">
+                                <th style="text-align: left; padding: 2rem 0;">代表取締役</th>
+                                <td style="padding: 2rem 0;">沼倉 隆平</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--c-ink);">
+                                <th style="text-align: left; padding: 2rem 0;">資本金</th>
+                                <td style="padding: 2rem 0;">300万円</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--c-ink);">
+                                <th style="text-align: left; padding: 2rem 0;">所在地</th>
+                                <td style="padding: 2rem 0;">〒141-0032 東京都品川区大崎4丁目4-24</td>
+                            </tr>
+                            <tr>
+                                <th style="text-align: left; padding: 2rem 0; vertical-align: top;">事業内容</th>
+                                <td style="padding: 2rem 0;">
+                                    Web制作サービス「LiteWEB+」の企画・開発・運営<br>
+                                    AIを活用したデジタルマーケティングソリューション<br>
+                                    広告業、営業代行業
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-cols mt-huge">
+            <div class="col-span-3">
+                <div class="hero-tag">PHILOSOPHY</div>
+            </div>
+            <div class="col-span-9">
+                <div style="margin-bottom: 10vh;">
+                    <h2 class="display-text text-lg mb-huge">MISSION</h2>
+                    <p class="text-lg" style="font-weight: 700;">この世のカッコイイを<br>再定義し続ける。</p>
+                </div>
+                <div>
+                    <h2 class="display-text text-lg mb-huge">VISION</h2>
+                    <p class="text-lg" style="font-weight: 700;">性・経済・ライフスタイルの<br>新しいスタンダードを創造する。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <div>&copy; 2025 LITEWEB+</div>
+            <a href="index.html">HOME</a>
+            <a href="legal.html">LEGAL</a>
+            <a href="privacy.html">PRIVACY</a>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Character Reveal Logic
+        function wrapChars(element) {
+            if (element.classList.contains('char-reveal')) return;
+
+            const walk = (node) => {
+                if (node.nodeType === 3) { // Text node
+                    const text = node.nodeValue;
+                    if (text.trim().length === 0) return;
+
+                    const span = document.createElement('span');
+                    span.innerHTML = text.split('').map(char => {
+                        return `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`;
+                    }).join('');
+
+                    node.parentNode.replaceChild(span, node);
+                } else if (node.nodeType === 1 && !['SCRIPT', 'STYLE', 'VIDEO', 'SVG'].includes(node.tagName)) {
+                    Array.from(node.childNodes).forEach(walk);
+                }
+            };
+
+            walk(element);
+            element.classList.add('char-reveal');
+
+            // Assign delays
+            const chars = element.querySelectorAll('.char');
+            chars.forEach((char, i) => {
+                char.style.transitionDelay = `${i * 0.015}s`;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const targets = document.querySelectorAll('p, h2, h3, h4, li, th, td, .hero-tag, .price-val, .feature-num');
+
+            targets.forEach(el => {
+                wrapChars(el);
+                observer.observe(el);
+            });
+
+            // Mobile Menu Toggle
+            const menuBtn = document.querySelectorAll('.nav-menu-btn');
+            const menuOverlay = document.querySelector('.menu-overlay');
+            const menuLinks = document.querySelectorAll('.menu-link');
+
+            menuBtn.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    menuOverlay.classList.toggle('active');
+                });
+            });
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuOverlay.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
