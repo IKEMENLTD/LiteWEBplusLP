@@ -371,6 +371,24 @@
         </div>
     </section>
 
+    <!-- Preview Modal -->
+    <div class="preview-modal" id="previewModal">
+        <div class="preview-modal-header">
+            <span class="preview-modal-title" id="previewTitle"></span>
+            <div class="preview-modal-actions">
+                <a href="#" id="previewExternalLink" target="_blank" class="preview-external-btn">新しいタブで開く</a>
+                <button class="preview-close-btn" id="previewClose">&times;</button>
+            </div>
+        </div>
+        <div class="preview-modal-body">
+            <div class="preview-loader" id="previewLoader">
+                <div class="preview-spinner"></div>
+                <p>読み込み中...</p>
+            </div>
+            <iframe id="previewFrame" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <a href="https://s.lmes.jp/landing-qr/2006748792-BXVNxLLm?uLand=TWDJ01" class="footer-cta display-text">
@@ -459,6 +477,59 @@
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuOverlay.classList.remove('active');
+            });
+        });
+
+        // Preview Modal
+        const previewModal = document.getElementById('previewModal');
+        const previewFrame = document.getElementById('previewFrame');
+        const previewTitle = document.getElementById('previewTitle');
+        const previewLoader = document.getElementById('previewLoader');
+        const previewClose = document.getElementById('previewClose');
+        const previewExternalLink = document.getElementById('previewExternalLink');
+
+        function openPreview(url, title) {
+            previewTitle.textContent = title;
+            previewExternalLink.href = url;
+            previewLoader.classList.remove('hidden');
+            previewFrame.src = url;
+            previewModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePreview() {
+            previewModal.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                previewFrame.src = '';
+            }, 300);
+        }
+
+        previewFrame.addEventListener('load', () => {
+            previewLoader.classList.add('hidden');
+        });
+
+        previewClose.addEventListener('click', closePreview);
+
+        previewModal.addEventListener('click', (e) => {
+            if (e.target === previewModal) {
+                closePreview();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && previewModal.classList.contains('active')) {
+                closePreview();
+            }
+        });
+
+        // Showcase item click handlers
+        document.querySelectorAll('.showcase-item .showcase-img').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const url = item.getAttribute('href');
+                const title = item.closest('.showcase-item').querySelector('.text-lg.font-bold').textContent;
+                openPreview(url, title);
             });
         });
     </script>
